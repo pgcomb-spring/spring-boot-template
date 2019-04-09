@@ -1,4 +1,4 @@
-package com.github.pgcomb.spbt.template.web.error;
+package com.github.pgcomb.spbt.template.web.resp;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

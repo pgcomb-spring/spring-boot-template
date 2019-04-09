@@ -1,6 +1,6 @@
 package com.github.pgcomb.spbt.template.web.rest;
 
-import org.springframework.security.core.SpringSecurityMessageSource;
+import com.github.pgcomb.spbt.template.config.HttpCodeSource;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,6 +18,6 @@ public class Rest {
 
     @GetMapping("a")
     public String a(){
-        return SpringSecurityMessageSource.getAccessor().getMessage("AbstractAccessDecisionManager.accessDenied");
+        return HttpCodeSource.getAccessor().getMessage("http.code.exception.AuthenticationException");
     }
 }
