@@ -1,4 +1,4 @@
-package com.github.pgcomb.spbt.template.config;
+package com.github.pgcomb.spbt.template.security;
 
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -34,7 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.csrf()
+        http
+                .csrf()
                 .disable();
     }
 }
