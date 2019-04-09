@@ -1,8 +1,11 @@
 package com.github.pgcomb.spbt.template.web.rest;
 
 import com.github.pgcomb.spbt.template.config.HttpCodeSource;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 
 /**
  * Title: Rest <br>
@@ -17,7 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class Rest {
 
     @GetMapping("a")
-    public String a(){
-        return HttpCodeSource.getAccessor().getMessage("http.code.exception.AuthenticationException");
+    public String a() throws AuthenticationException {
+        throw new BadCredentialsException("bad");
     }
+
 }

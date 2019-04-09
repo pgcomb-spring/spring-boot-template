@@ -5,19 +5,18 @@ import org.springframework.web.context.request.NativeWebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
 /**
- * Title: ExceptionHandler <br>
- * Description: ExceptionHandler <br>
+ * Title: ExceptionRespHandler <br>
+ * Description: ExceptionRespHandler <br>
  * Date: 2019年04月09日
  *
  * @author 王东旭
  * @version 1.0.0
  * @since jdk8
  */
-public interface ExceptionHandler<E> {
+public interface ExceptionRespHandler<E> {
 
-    void handle(HttpServletRequest request, HttpServletResponse response, E ex);
-
-    ResponseEntity handle(E e, NativeWebRequest request);
+    void handle(HttpServletRequest request, HttpServletResponse response, E ex) throws IOException;
 }
